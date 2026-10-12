@@ -63,9 +63,6 @@
 
     var info = el("div", "det-info");
     info.append(el("span", "tag", p.marca + " · " + p.cat), el("h1", "det-title", p.nome), el("p", "det-resumo", p.resumo));
-    var ul = el("ul", "specs");
-    (p.specs || []).forEach(function (s) { ul.appendChild(el("li", null, s)); });
-    info.appendChild(ul);
 
     var buy = el("div", "buy");
     // Mercado Livre
@@ -94,6 +91,30 @@
 
     grid2.append(fig, info);
     wrap.append(back, grid2);
+
+    var tec = el("div", "det-tec");
+    if (p.aplicacao) {
+      var ap = el("section", "det-bloco");
+      ap.append(el("h2", "det-h", "Aplicação"), el("p", "det-aplic", p.aplicacao));
+      tec.appendChild(ap);
+    }
+    if (p.ficha && p.ficha.length) {
+      var fs = el("section", "det-bloco");
+      fs.appendChild(el("h2", "det-h", "Ficha técnica"));
+      var sc = el("div", "ficha-wrap");
+      var tb = el("table", "ficha");
+      var tbody = el("tbody");
+      p.ficha.forEach(function (r) {
+        var tr = el("tr");
+        tr.append(el("th", null, r[0]), el("td", null, r[1]));
+        tr.firstChild.scope = "row";
+        tbody.appendChild(tr);
+      });
+      tb.appendChild(tbody); sc.appendChild(tb); fs.appendChild(sc);
+      fs.appendChild(el("p", "note", "Dados conforme a documentação do fabricante. Confirme o código do modelo antes de comprar."));
+      tec.appendChild(fs);
+    }
+    wrap.appendChild(tec);
     det.appendChild(wrap);
     document.title = p.nome + " | DL Electronic";
   }

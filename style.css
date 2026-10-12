@@ -116,9 +116,6 @@ a { color: inherit; }
 .det-img img { width: 100%; height: 100%; object-fit: cover; }
 .det-title { font-size: clamp(1.6rem, 3.4vw, 2.4rem); line-height: 1.1; letter-spacing: -0.025em; margin: 6px 0 8px; text-wrap: balance; }
 .det-resumo { color: var(--fg2); margin: 0 0 18px; }
-.specs { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 8px; }
-.specs li { position: relative; padding-left: 18px; color: var(--fg2); font-size: .9375rem; }
-.specs li::before { content: ""; position: absolute; left: 0; top: .6em; width: 6px; height: 6px; border-radius: 1px; background: var(--accent); }
 .buy { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 12px; }
 .buy-opt { display: flex; flex-direction: column; gap: 4px; border: 1px solid var(--edge); border-radius: 14px; padding: 18px; background: linear-gradient(180deg, var(--card-top), var(--card)); box-shadow: inset 0 1px 0 var(--hi); }
 .buy-direct { border-color: rgba(37,211,102,.35); }
@@ -128,4 +125,14 @@ a { color: inherit; }
 .buy-opt .btn { margin-top: auto; white-space: nowrap; font-size: .9375rem; padding-inline: 14px; }
 .btn-wa { background: #25d366; color: #04210f; }
 .btn-off { background: transparent; color: var(--fg3); border-color: var(--edge); cursor: default; }
-@media (max-width: 760px) { .det-grid { grid-template-columns: 1fr; } }
+.det-tec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(24px, 5vw, 56px); margin-top: clamp(32px, 6vw, 64px); padding-top: clamp(24px, 4vw, 40px); border-top: 1px solid var(--sep); align-items: start; }
+.det .det-h { font-family: var(--mono); font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
+.det-aplic { color: var(--fg2); margin: 0; max-width: 60ch; }
+.ficha-wrap { overflow-x: auto; border: 1px solid var(--edge); border-radius: 14px; background: var(--card); }
+.ficha { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+.ficha th, .ficha td { text-align: left; vertical-align: top; padding: 11px 16px; border-bottom: 1px solid var(--sep); }
+.ficha tr:last-child th, .ficha tr:last-child td { border-bottom: 0; }
+.ficha tr:nth-child(even) { background: rgba(190,205,220,.03); }
+.ficha th { font-family: var(--mono); font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--fg3); width: 38%; white-space: nowrap; }
+.ficha td { color: var(--fg); }
+@media (max-width: 760px) { .det-grid, .det-tec { grid-template-columns: 1fr; } .ficha th { white-space: normal; width: 42%; } }
