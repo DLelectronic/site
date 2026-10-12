@@ -10,7 +10,7 @@ window.DL_CONFIG = {
 window.DL_PRODUTOS = [
   { id: "dop-107bv", nome: "IHM Delta DOP-107BV", cat: "IHM", marca: "Delta",
     resumo: 'Tela touch 7" TFT 800×480, 2 portas seriais e USB.',
-    aplicacao: "IHM de 7\" de entrada da linha DOP-100, muito usada em máquinas de embalagem, envase, dosagem, seladoras e esteiras. Comunica por serial com CLPs Delta (DVP, AS), inversores e servos Delta e com CLPs de outras marcas via Modbus. É reposição direta em máquinas nacionais e chinesas que já saem de fábrica com ela.",
+    aplicacao: "IHM de 7\" de entrada da linha DOP-100, muito usada em máquinas têxteis, bobinadeiras, estações de bombeamento, fornos industriais, equipamentos de climatização e linhas de transporte. Comunica por serial com CLPs Delta (DVP, AS), inversores e servos Delta e com CLPs de outras marcas via Modbus. É reposição direta em máquinas nacionais e chinesas que já saem de fábrica com ela.",
     ficha: [
       ["Display", '7" TFT LCD, área ativa 154,08 × 85,92 mm'],
       ["Resolução", "800 × 480 pixels"],
@@ -62,7 +62,7 @@ window.DL_PRODUTOS = [
 
   { id: "smart-700-ie-v4", nome: "IHM Siemens Smart 700 IE V4", cat: "IHM", marca: "Siemens",
     resumo: 'SMART LINE 7" com Ethernet e RS-422/485.',
-    aplicacao: "IHM da linha SMART da Siemens, feita para trabalhar com o CLP S7-200 SMART em máquinas compactas: embaladoras, dosadoras, sopradoras, fornos e painéis de utilidades. Comunica por Ethernet ou RS-485 e é configurada no WinCC flexible SMART, gratuito.",
+    aplicacao: "IHM da linha SMART da Siemens, feita para trabalhar com o CLP S7-200 SMART em máquinas compactas: sopradoras e injetoras de plástico, fornos, compressores, estações de tratamento de água e painéis de utilidades. Comunica por Ethernet ou RS-485 e é configurada no WinCC flexible SMART, gratuito.",
     ficha: [
       ["Código", "6AV6648-0DC11-3AX0"],
       ["Display", '7" TFT LCD widescreen, área 154,1 × 85,9 mm'],
@@ -89,7 +89,7 @@ window.DL_PRODUTOS = [
 
   { id: "kinco-gl070e", nome: "IHM Kinco GL070E", cat: "IHM", marca: "Kinco",
     resumo: 'Green Series 7" touch com Ethernet e RS-485.',
-    aplicacao: "IHM da linha Green da Kinco, comum em máquinas chinesas de embalagem, rotuladoras e equipamentos de processo. Tem Ethernet e duas portas seriais simultâneas, com drivers para a maioria dos CLPs do mercado (Siemens, Delta, Mitsubishi, Omron, Kinco e Modbus).",
+    aplicacao: "IHM da linha Green da Kinco, comum em máquinas chinesas de corte a laser, gravação CNC, máquinas têxteis, tratamento de água e equipamentos de processo. Tem Ethernet e duas portas seriais simultâneas, com drivers para a maioria dos CLPs do mercado (Siemens, Delta, Mitsubishi, Omron, Kinco e Modbus).",
     ficha: [
       ["Display", '7" TFT, área 154,08 × 85,92 mm'],
       ["Resolução", "800 × 480 pixels"],
@@ -120,7 +120,7 @@ window.DL_PRODUTOS = [
 
   { id: "s7-200-smart", nome: "CLP Siemens S7-200 SMART", cat: "CLP", marca: "Siemens",
     resumo: "CPU SR40: 24 entradas, 16 saídas a relé, Ethernet.",
-    aplicacao: "CLP compacto da Siemens para máquinas de pequeno e médio porte: embaladoras, transportadores, bombas, compressores, sopradoras e automação predial. Alimentado direto em 127/220 V CA, tem Ethernet integrada para programação e comunicação com IHMs SMART, e contadores rápidos para encoders.",
+    aplicacao: "CLP compacto da Siemens para máquinas de pequeno e médio porte: transportadores, bombas, compressores, sopradoras, tratamento de água e automação predial. Alimentado direto em 127/220 V CA, tem Ethernet integrada para programação e comunicação com IHMs SMART, e contadores rápidos para encoders.",
     ficha: [
       ["Código", "6ES7288-1SR40-0AA0 (CPU SR40 AC/DC/Relé)"],
       ["Alimentação", "85 a 264 V CA, 47 a 63 Hz"],
@@ -145,7 +145,7 @@ window.DL_PRODUTOS = [
 
   { id: "dtk-delta", nome: "Controlador de temperatura Delta DTK", cat: "Controle", marca: "Delta",
     resumo: "PID 48×48 mm, 2 saídas a relé, 100–240 V.",
-    aplicacao: "Controlador de temperatura para seladoras, fornos, estufas, injetoras, extrusoras, banhos e resistências em geral. Trabalha com termopar ou PT100 e controla a carga por relé em PID ou ON/OFF.",
+    aplicacao: "Controlador de temperatura para fornos, estufas, injetoras, extrusoras, banhos e resistências em geral. Trabalha com termopar ou PT100 e controla a carga por relé em PID ou ON/OFF.",
     ficha: [
       ["Modelo", "DTK4848R01"],
       ["Formato", "48 × 48 mm (1/16 DIN), montagem em painel"],
