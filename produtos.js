@@ -2,7 +2,7 @@
    preco: valor no Mercado Livre · precoDireto: valor para compra direta (WhatsApp)
    link: URL do anúncio no Mercado Livre (se vazio, vai para a loja). */
 window.DL_CONFIG = {
-  whatsapp: "",            // ex.: "5514999999999" — vazio desativa a compra pelo WhatsApp
+  whatsapp: "5514998714561",          // ex.: "5514999999999" — vazio desativa a compra pelo WhatsApp
   loja: "https://www.mercadolivre.com.br/pagina/dlelectronic"
 };
 
