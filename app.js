@@ -68,7 +68,7 @@
     // Mercado Livre
     var ml = el("div", "buy-opt");
     ml.append(el("span", "buy-lbl", "No Mercado Livre"), el("strong", "buy-price", brl.format(p.preco)),
-      el("span", "buy-sub", "Em até 12x · frete grátis · compra garantida"));
+      el("span", "buy-sub", "Em até 12x · compra garantida"));
     var mlBtn = el("a", "btn", "Comprar no Mercado Livre");
     mlBtn.href = p.link || cfg.loja; mlBtn.target = "_blank"; mlBtn.rel = "noopener";
     ml.appendChild(mlBtn);
@@ -140,7 +140,7 @@
   /* ---------- WhatsApp geral ---------- */
   if (cfg.whatsapp) {
     document.querySelectorAll(".js-wa").forEach(function (a) {
-      a.href = waLink("Olá! Vim pelo site da DL Electronic."); a.hidden = false;
+      a.href = waLink(a.dataset.waMsg || "Olá! Vim pelo site da DL Electronic."); a.hidden = false;
     });
     document.querySelectorAll(".js-wa-foot").forEach(function (s) { s.hidden = false; });
   }
