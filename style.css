@@ -157,3 +157,6 @@ a { color: inherit; }
 .preco .preco-tag { font-size: .75rem; font-weight: 400; color: var(--fg3); letter-spacing: 0; }
 .preco-wa { margin: 2px 0 0; font-size: .875rem; color: var(--fg2); }
 .preco-wa strong { color: #1a8f48; font-weight: 700; font-size: 1rem; }
+/* botões do Mercado Livre na cor da marca */
+a.btn[href*="mercadolivre"] { background: #ffe600; color: #2d3277; border-color: #f2d900; box-shadow: none; }
+a.btn[href*="mercadolivre"]:hover { background: #fff159; filter: none; }
