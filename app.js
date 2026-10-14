@@ -118,6 +118,11 @@
       });
       tb.appendChild(tbody); sc.appendChild(tb); fs.appendChild(sc);
       fs.appendChild(el("p", "note", "Dados conforme a documentação do fabricante. Confirme o código do modelo antes de comprar."));
+      if (p.datasheet) {
+        var ds = el("a", "btn btn-ghost btn-ds", "Baixar datasheet (PDF)");
+        ds.href = p.datasheet; ds.target = "_blank"; ds.rel = "noopener"; ds.setAttribute("download", "");
+        fs.appendChild(ds);
+      }
       tec.appendChild(fs);
     }
     wrap.appendChild(tec);
