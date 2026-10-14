@@ -31,7 +31,13 @@
       el("p", "resumo", p.resumo)
     );
     var preco = el("p", "preco", brl.format(p.preco));
+    preco.appendChild(el("span", "preco-tag", " no Mercado Livre"));
     body.appendChild(preco);
+    if (p.precoDireto) {
+      var dir = el("p", "preco-wa");
+      dir.append(el("strong", null, brl.format(p.precoDireto)), el("span", null, " no WhatsApp · Pix"));
+      body.appendChild(dir);
+    }
     body.appendChild(el("span", "card-link", "Ver detalhes →"));
     a.append(fig, body);
     return a;
