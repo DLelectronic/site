@@ -38,7 +38,7 @@ window.DL_PRODUTOS = [
       ["Software", "DOPSoft (Delta)"]
     ],
     preco: 1300, precoDireto: 1120, img: "img/dop-107bv.jpg",
-    link: "https://www.mercadolivre.com.br/ihm-delta-dop-107bv-7-polegadas-novo-e-lacrado-com-nf/p/MLB2104500154?pdp_filters=item_id%3AMLB5369072993" },
+    link: "https://www.mercadolivre.com.br/ihm-delta-dop-107bv-7-polegadas-novo-e-lacrado-com-nf/p/MLB2104500154?pdp_filters=item_id%3AMLB4705073763" },
 
   { id: "ktp700-basic", nome: "IHM Siemens KTP700 Basic", cat: "IHM", marca: "Siemens",
     resumo: 'Painel SIMATIC 7" com 8 teclas e PROFINET.',
