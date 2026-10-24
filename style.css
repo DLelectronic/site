@@ -162,3 +162,19 @@ a.btn[href*="mercadolivre"] { background: #ffe600; color: #2d3277; border-color:
 a.btn[href*="mercadolivre"]:hover { background: #fff159; filter: none; }
 .btn-ds { margin-top: 16px; }
 .btn-ds::before { content: ""; width: 14px; height: 14px; background: currentColor; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12' stroke='black' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12' stroke='black' stroke-width='1.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat; }
+
+/* painel: fotos, galeria, componentes */
+.card-img.is-photo, .det-img.is-photo { background: #f3f4f6; }
+.card-img.is-photo img, .det-img.is-photo img { object-fit: contain; }
+.det-thumbs { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.det-thumb { width: 64px; height: 64px; padding: 0; border: 1px solid var(--edge); border-radius: 8px; overflow: hidden; background: #f3f4f6; cursor: pointer; }
+.det-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.det-thumb.is-on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.foto-nota { margin-top: 8px; }
+.det-tec:has(.det-comp) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.det-comp { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 18px 28px; }
+.det-comp > .det-h { grid-column: 1 / -1; margin-bottom: 0; }
+.comp-h { font-size: .95rem; margin: 0 0 6px; }
+.comp-lista { margin: 0; padding-left: 18px; color: var(--fg2); font-size: .9375rem; display: grid; gap: 4px; }
+.det-nota { margin-top: clamp(24px, 4vw, 40px); padding: clamp(18px, 3vw, 24px); border: 1px solid var(--edge); border-radius: 14px; background: var(--bg2); }
+.det-nota p { margin: 0; color: var(--fg2); max-width: 75ch; }

@@ -21,7 +21,7 @@
     var a = el("a", "card");
     a.href = "#p-" + p.id;
     a.dataset.cat = p.cat;
-    var fig = el("div", "card-img");
+    var fig = el("div", "card-img" + (p.imgs ? " is-photo" : ""));
     var img = el("img"); img.src = p.img; img.alt = p.nome; img.loading = "lazy"; img.width = 400; img.height = 400;
     fig.appendChild(img);
     var body = el("div", "card-body");
@@ -30,10 +30,17 @@
       el("h3", null, p.nome),
       el("p", "resumo", p.resumo)
     );
+    if (p.soDireto) {
+      var pd = el("p", "preco", brl.format(p.precoDireto));
+      pd.appendChild(el("span", "preco-tag", " venda direta"));
+      body.appendChild(pd);
+      body.appendChild(el("p", "preco-wa", "Orçamento e pagamento pelo WhatsApp"));
+    } else {
     var preco = el("p", "preco", brl.format(p.preco));
     preco.appendChild(el("span", "preco-tag", " no Mercado Livre"));
     body.appendChild(preco);
-    if (p.precoDireto) {
+    }
+    if (p.precoDireto && !p.soDireto) {
       var dir = el("p", "preco-wa");
       dir.append(el("strong", null, brl.format(p.precoDireto)), el("span", null, " no WhatsApp · Pix"));
       body.appendChild(dir);
@@ -63,14 +70,38 @@
     var back = el("a", "back", "← Todos os produtos"); back.href = "#produtos";
     var grid2 = el("div", "det-grid");
 
-    var fig = el("div", "det-img");
+    var fig = el("div", "det-media");
+    var frame = el("div", "det-img" + (p.imgs ? " is-photo" : ""));
     var img = el("img"); img.src = p.img; img.alt = p.nome; img.width = 800; img.height = 800;
-    fig.appendChild(img);
+    frame.appendChild(img); fig.appendChild(frame);
+    if (p.imgs && p.imgs.length > 1) {
+      var th = el("div", "det-thumbs");
+      p.imgs.forEach(function (src, i) {
+        var b = el("button", "det-thumb" + (i === 0 ? " is-on" : ""));
+        b.type = "button"; b.setAttribute("aria-label", "Foto " + (i + 1));
+        var ti = el("img"); ti.src = src; ti.alt = ""; ti.loading = "lazy"; b.appendChild(ti);
+        b.addEventListener("click", function () {
+          img.src = src; th.querySelectorAll(".det-thumb").forEach(function (x) { x.classList.toggle("is-on", x === b); });
+        });
+        th.appendChild(b);
+      });
+      fig.appendChild(th);
+    }
+    if (p.fotoNota) fig.appendChild(el("p", "note foto-nota", p.fotoNota));
 
     var info = el("div", "det-info");
     info.append(el("span", "tag", p.marca + " · " + p.cat), el("h1", "det-title", p.nome), el("p", "det-resumo", p.resumo));
 
     var buy = el("div", "buy");
+    if (p.soDireto) {
+      var so = el("div", "buy-opt buy-direct");
+      so.append(el("span", "buy-lbl", "Venda direta DL Electronic"), el("strong", "buy-price", brl.format(p.precoDireto)),
+        el("span", "buy-sub", "Pix ou transferência · frete e prazo sob consulta"));
+      var w2 = el("a", "btn btn-wa", "Solicitar orçamento pelo WhatsApp");
+      w2.href = waLink(p.waMsg || ("Olá! Tenho interesse no " + p.nome + "."));
+      w2.target = "_blank"; w2.rel = "noopener"; so.appendChild(w2);
+      buy.appendChild(so); info.appendChild(buy);
+    } else {
     // Mercado Livre
     var ml = el("div", "buy-opt");
     ml.append(el("span", "buy-lbl", "No Mercado Livre"), el("strong", "buy-price", brl.format(p.preco)),
@@ -94,6 +125,7 @@
     }
     buy.append(ml, dir);
     info.appendChild(buy);
+    }
 
     grid2.append(fig, info);
     wrap.append(back, grid2);
@@ -103,6 +135,18 @@
       var ap = el("section", "det-bloco");
       ap.append(el("h2", "det-h", "Aplicação"), el("p", "det-aplic", p.aplicacao));
       tec.appendChild(ap);
+    }
+    if (p.componentes) {
+      var cp = el("section", "det-bloco det-comp");
+      cp.appendChild(el("h2", "det-h", "Componentes"));
+      p.componentes.forEach(function (g) {
+        var gr = el("div", "comp-grupo");
+        gr.appendChild(el("h3", "comp-h", g[0]));
+        var ul = el("ul", "comp-lista");
+        g[1].forEach(function (t) { ul.appendChild(el("li", null, t)); });
+        gr.appendChild(ul); cp.appendChild(gr);
+      });
+      tec.appendChild(cp);
     }
     if (p.ficha && p.ficha.length) {
       var fs = el("section", "det-bloco");
@@ -117,7 +161,7 @@
         tbody.appendChild(tr);
       });
       tb.appendChild(tbody); sc.appendChild(tb); fs.appendChild(sc);
-      fs.appendChild(el("p", "note", "Dados conforme a documentação do fabricante. Confirme o código do modelo antes de comprar."));
+      fs.appendChild(el("p", "note", p.fichaNota || "Dados conforme a documentação do fabricante. Confirme o código do modelo antes de comprar."));
       if (p.datasheet) {
         var ds = el("a", "btn btn-ghost btn-ds", "Baixar datasheet (PDF)");
         ds.href = p.datasheet; ds.target = "_blank"; ds.rel = "noopener"; ds.setAttribute("download", "");
@@ -126,6 +170,11 @@
       tec.appendChild(fs);
     }
     wrap.appendChild(tec);
+    if (p.nota) {
+      var nt = el("div", "det-nota");
+      nt.append(el("h2", "det-h", "Programação"), el("p", null, p.nota));
+      wrap.appendChild(nt);
+    }
     det.appendChild(wrap);
     document.title = p.nome + " | DL Electronic";
   }

@@ -8,6 +8,61 @@ window.DL_CONFIG = {
 };
 
 window.DL_PRODUTOS = [
+  { id: "painel-delta", nome: "Painel de Comando CLP + IHM 7\" Delta", cat: "Painéis", marca: "Delta",
+    resumo: "Painel montado e testado: CLP 24 E / 16 S e IHM touch 7\" na porta.",
+    soDireto: true, precoDireto: 7990,
+    img: "img/painel-delta-1.jpg",
+    imgs: ["img/painel-delta-1.jpg", "img/painel-delta-2.jpg", "img/painel-delta-3.jpg", "img/painel-delta-5.jpg"],
+    fotoNota: "Fotos ilustrativas. A configuração interna segue a lista de componentes abaixo.",
+    aplicacao: "Painel de comando pronto para instalar, com CLP e IHM touch de 7\" já montados, fiados e testados. Solução compacta e econômica para automatizar máquinas, bancadas de teste, sistemas de bombeamento, climatização, fornos, transportadores e processos industriais em geral. Sai de fábrica com projeto elétrico, layout, montagem, fiação identificada e testes elétricos e funcionais de entradas, saídas e emergência.",
+    componentes: [
+      ["Controle", ["CLP Delta DVP40ES200R: 24 entradas digitais e 16 saídas a relé", "IHM Delta DOP-107BV: touch screen colorida 7\" 800×480, 2 portas seriais e USB, montada na porta"]],
+      ["Gabinete", ["Caixa em aço carbono 600 × 500 × 250 mm, grau de proteção IP54", "Porta com fechadura", "Placa de montagem, trilho DIN 35 mm e canaletas 30 × 50 mm", "Prensa-cabos e entrada de cabos pela parte inferior", "Porta-documentos"]],
+      ["Alimentação e proteção", ["Chave seccionadora tripolar 20 A", "Disjuntor geral bipolar 16 A, curva C (Siemens)", "Fonte de alimentação 24 Vcc 5 A (Novus)", "4 bornes porta-fusível 4 mm²"]],
+      ["Conexões", ["60 bornes de passagem 2,5 mm² (Siemens)", "10 bornes de terra 2,5 mm² (Siemens)", "Fiação de comando com terminais e anilhas de identificação"]],
+      ["Comando e sinalização", ["Botão de emergência tipo cogumelo (Siemens)", "Sinaleiro luminoso (Siemens)"]],
+      ["Acompanha", ["Painel montado, fiado e testado", "Diagrama elétrico do painel", "Embalagem de proteção para transporte"]]
+    ],
+    ficha: [
+      ["CLP", "Delta DVP40ES200R — 24 ED / 16 SD a relé"],
+      ["IHM", "Delta DOP-107BV — 7\" TFT 800 × 480, touch"],
+      ["Alimentação", "220 Vca"],
+      ["Tensão de comando", "24 Vcc"],
+      ["Dimensões", "600 × 500 × 250 mm"],
+      ["Grau de proteção", "IP54"],
+      ["Gabinete", "Aço carbono"]
+    ],
+    fichaNota: "Especificações do painel padrão. Alterações sob consulta.",
+    nota: "O painel é entregue com o CLP e a IHM sem programa de aplicação. O serviço de programação do CLP e de desenvolvimento das telas da IHM, sob medida para a sua máquina ou processo, é orçado sob consulta. Fale com a gente pelo WhatsApp.",
+    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Delta por R$ 7.990. Pode me passar prazo e condições?" },
+  { id: "painel-siemens", nome: "Painel de Comando CLP + IHM 7\" Siemens", cat: "Painéis", marca: "Siemens",
+    resumo: "Painel montado e testado: CLP S7-200 SMART 24 E / 16 S e IHM SMART 700 IE V4 na porta.",
+    soDireto: true, precoDireto: 9990,
+    img: "img/painel-siemens-1.jpg",
+    imgs: ["img/painel-siemens-1.jpg", "img/painel-siemens-2.jpg", "img/painel-siemens-3.jpg", "img/painel-siemens-4.jpg"],
+    fotoNota: "Fotos ilustrativas. A configuração interna segue a lista de componentes abaixo.",
+    aplicacao: "Painel de comando pronto para instalar, com CLP Siemens S7-200 SMART e IHM SMART 700 IE V4 já montados, fiados e testados. Solução compacta para automatizar máquinas, bancadas de teste, sistemas de bombeamento, climatização, fornos, transportadores e processos industriais em geral, com comunicação Ethernet entre CLP e IHM. Sai de fábrica com projeto elétrico, layout, montagem, fiação identificada e testes elétricos e funcionais de entradas, saídas e emergência.",
+    componentes: [
+      ["Controle", ["CLP Siemens S7-200 SMART SR40: 24 entradas digitais e 16 saídas a relé, Ethernet e RS-485", "IHM Siemens SMART 700 IE V4 (6AV6648-0DC11-3AX0): touch screen colorida 7\" 800×480, Ethernet e RS-422/485, montada na porta"]],
+      ["Gabinete", ["Caixa em aço carbono 600 × 500 × 250 mm, grau de proteção IP54", "Porta com fechadura", "Placa de montagem, trilho DIN 35 mm e canaletas 30 × 50 mm", "Prensa-cabos e entrada de cabos pela parte inferior", "Porta-documentos"]],
+      ["Alimentação e proteção", ["Chave seccionadora tripolar 20 A", "Disjuntor geral bipolar 16 A, curva C (Siemens)", "Fonte de alimentação 24 Vcc 5 A (Novus)", "4 bornes porta-fusível 4 mm²"]],
+      ["Conexões", ["60 bornes de passagem 2,5 mm² (Siemens)", "10 bornes de terra 2,5 mm² (Siemens)", "Fiação de comando com terminais e anilhas de identificação"]],
+      ["Comando e sinalização", ["Botão de emergência tipo cogumelo (Siemens)", "Sinaleiro luminoso (Siemens)"]],
+      ["Acompanha", ["Painel montado, fiado e testado", "Diagrama elétrico do painel", "Embalagem de proteção para transporte"]]
+    ],
+    ficha: [
+      ["CLP", "Siemens S7-200 SMART SR40 — 24 ED / 16 SD a relé"],
+      ["IHM", "Siemens SMART 700 IE V4 — 7\" TFT 800 × 480, touch"],
+      ["Comunicação", "Ethernet (CLP e IHM), RS-485"],
+      ["Alimentação", "220 Vca"],
+      ["Tensão de comando", "24 Vcc"],
+      ["Dimensões", "600 × 500 × 250 mm"],
+      ["Grau de proteção", "IP54"],
+      ["Gabinete", "Aço carbono"]
+    ],
+    fichaNota: "Especificações do painel padrão. Alterações sob consulta.",
+    nota: "O painel é entregue com o CLP e a IHM sem programa de aplicação. O serviço de programação do CLP e de desenvolvimento das telas da IHM, sob medida para a sua máquina ou processo, é orçado sob consulta. Fale com a gente pelo WhatsApp.",
+    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Siemens por R$ 9.990. Pode me passar prazo e condições?" },
   { id: "dop-107bv", nome: "IHM Delta DOP-107BV", cat: "IHM", marca: "Delta",
     resumo: 'Tela touch 7" TFT 800×480, 2 portas seriais e USB.',
     aplicacao: "IHM de 7\" de entrada da linha DOP-100, muito usada em máquinas têxteis, bobinadeiras, estações de bombeamento, fornos industriais, equipamentos de climatização e linhas de transporte. Comunica por serial com CLPs Delta (DVP, AS), inversores e servos Delta e com CLPs de outras marcas via Modbus. É reposição direta em máquinas nacionais e chinesas que já saem de fábrica com ela.",
