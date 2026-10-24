@@ -142,7 +142,7 @@ window.DL_PRODUTOS = [
       ["Peso", "Aprox. 770 g"],
       ["Software", "WinCC flexible SMART V4"]
     ],
-    preco: 1880, precoDireto: 1630, img: "img/smart-700-ie-v4.jpg",
+    preco: 1880, precoDireto: 1630, img: "img/smart-700-ie-v4-caixa.jpg",
     link: "https://www.mercadolivre.com.br/ihm-siemens-smart-700-ie-v4/up/MLBU3559259807?pdp_filters=item_id%3AMLB4695663787" },
 
   { id: "kinco-gl070e", nome: "IHM Kinco GL070E", cat: "IHM", marca: "Kinco",
