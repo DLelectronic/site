@@ -4,7 +4,8 @@
    link: URL do anúncio no Mercado Livre (se vazio, vai para a loja). */
 window.DL_CONFIG = {
   whatsapp: "5514998714561",
-  loja: "https://www.mercadolivre.com.br/pagina/dlelectronic"
+  loja: "https://www.mercadolivre.com.br/pagina/dlelectronic",
+  goatcounter: ""   /* código da conta GoatCounter (ex.: "dlelectronic"); vazio = contador desligado */
 };
 
 window.DL_PRODUTOS = [

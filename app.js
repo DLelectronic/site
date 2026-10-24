@@ -6,6 +6,29 @@
   var home = document.querySelectorAll("[data-home]");
   var det = document.getElementById("detalhe");
 
+  /* ---------- contador de visitas (GoatCounter, sem cookies) ---------- */
+  var gcFila = [];
+  function conta(path, title, evento) {
+    if (!cfg.goatcounter) return;
+    var d = { path: path, title: title || path, event: !!evento };
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count(d);
+    else gcFila.push(d);
+  }
+  if (cfg.goatcounter) {
+    window.goatcounter = { no_onload: true };
+    var gs = document.createElement("script");
+    gs.async = true; gs.src = "https://gc.zgo.at/count.js";
+    gs.setAttribute("data-goatcounter", "https://" + cfg.goatcounter + ".goatcounter.com/count");
+    gs.onload = function () { gcFila.splice(0).forEach(function (d) { window.goatcounter.count(d); }); };
+    document.head.appendChild(gs);
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a"); if (!a) return;
+      var pid = det.hidden ? "" : (det.dataset.pid || "");
+      if (/wa\.me/.test(a.href)) conta("clique-whatsapp/" + (pid || "geral"), "WhatsApp" + (pid ? " – " + pid : ""), true);
+      else if (/mercadolivre/.test(a.href)) conta("clique-ml/" + (pid || "loja"), "Mercado Livre" + (pid ? " – " + pid : ""), true);
+    });
+  }
+
   function waLink(texto) {
     return "https://wa.me/" + cfg.whatsapp + "?text=" + encodeURIComponent(texto);
   }
@@ -184,6 +207,8 @@
     var p = h.indexOf("p-") === 0 && itens.find(function (x) { return "p-" + x.id === h; });
     if (p) {
       renderDetalhe(p);
+      det.dataset.pid = p.id;
+      conta("/produto/" + p.id, p.nome);
       home.forEach(function (s) { s.hidden = true; });
       det.hidden = false;
       window.scrollTo(0, 0);
@@ -191,6 +216,7 @@
       det.hidden = true;
       home.forEach(function (s) { s.hidden = false; });
       document.title = "DL Electronic | IHMs, CLPs e hardware de automação";
+      conta("/", "Início");
       if (h) { var t = document.getElementById(h); if (t) t.scrollIntoView(); }
     }
   }
