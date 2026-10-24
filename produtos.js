@@ -217,7 +217,7 @@ window.DL_PRODUTOS = [
       ["Display", "LCD de alta resolução"],
       ["Temperatura de operação", "0 a 50 °C"]
     ],
-    preco: 340, precoDireto: 278, img: "img/dtk4848.jpg",
+    preco: 340, precoDireto: 278, img: "img/dtk4848-v2.jpg",
     link: "https://www.mercadolivre.com.br/controlador-de-temperatura-dtk-delta/up/MLBU3805211573?pdp_filters=item_id%3AMLB4484937175" },
 
   { id: "hikrobot-mv-cs016", nome: "Câmera industrial Hikrobot MV-CS016-10UC", cat: "Visão", marca: "Hikrobot",
