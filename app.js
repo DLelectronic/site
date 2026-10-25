@@ -150,6 +150,19 @@
     info.appendChild(buy);
     }
 
+    if (p.software) {
+      var sw = p.software, sb = el("div", "soft-box");
+      var top = el("div", "soft-top");
+      top.append(el("span", "soft-marca", sw.marca), el("span", "soft-sep", "·"), el("span", "soft-lbl", "Software de configuração"));
+      var nm = el("p", "soft-nome"); nm.append(el("strong", null, sw.nome), el("span", "soft-free", sw.tag || "gratuito"));
+      sb.append(top, nm, el("p", "soft-desc", sw.desc));
+      var sl = el("a", "btn btn-ghost soft-btn", "Baixar o " + sw.nome + " no site da " + sw.fab + " →");
+      sl.href = sw.link; sl.target = "_blank"; sl.rel = "noopener";
+      sb.appendChild(sl);
+      if (sw.dica) sb.appendChild(el("p", "note soft-dica", sw.dica));
+      info.appendChild(sb);
+    }
+
     grid2.append(fig, info);
     wrap.append(back, grid2);
 

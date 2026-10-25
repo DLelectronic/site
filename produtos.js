@@ -225,7 +225,11 @@ window.DL_PRODUTOS = [
     resumo: "Câmera com software embarcado: inspeciona, decide OK/NG e avisa o CLP. Sem PC.",
     soDireto: true, precoDireto: 6990,
     img: "img/hikrobot-sc3016c.jpg",
-    fotoNota: "Imagem ilustrativa.",
+    fotoNota: "Imagem do fabricante. Medidas em mm; fixação traseira por 4 furos M4.",
+    software: { marca: "HIKROBOT", fab: "Hikrobot", nome: "SCMVS", tag: "gratuito",
+      desc: "Programa oficial da Hikrobot para configurar a câmera pelo computador: cria as inspeções com ferramentas visuais, sem programação, ajusta imagem e iluminação, define as saídas OK/NG e a comunicação com o CLP. Depois de configurada, a câmera trabalha sozinha, sem o computador.",
+      link: "https://www.hikrobotics.com/en/machinevision/service/download?module=0",
+      dica: "Na Central de Downloads da Hikrobot, procure por \"SCMVS\" (Windows)." },
     aplicacao: "Câmera inteligente da série SC3000 com processamento e software embarcados: ela tira a foto, analisa a imagem e envia o resultado OK/NG direto ao CLP pelas saídas digitais ou por Profinet, Modbus ou EtherNet/IP, sem computador na linha. Sensor colorido de 1,6 MP com obturador global, lente de 6 mm e iluminação branca integrada. A configuração é feita pelo software gratuito SCMVS, por ferramentas visuais, sem programação.\n\nExemplos de aplicação:\n• Conferência de rótulo: verifica se o rótulo está presente, se é o rótulo certo (modelo, sabor, cor ou versão) e se está bem posicionado e alinhado no produto.\n• Leitura de lote e validade (OCR) e de códigos de barras, QR Code e DataMatrix para rastreabilidade.\n• Contagem de peças em bandejas, caixas e gabaritos, garantindo a quantidade correta.\n• Presença e ausência de componentes em montagens: parafusos, clipes, anéis de vedação, conectores, tampas e etiquetas.\n• Posição e orientação de peças antes da próxima etapa do processo (peça invertida, girada ou fora do lugar).\n• Conferência de cor: fios em chicotes elétricos, tampas, LEDs e peças plásticas.\n• Medições simples: diâmetro, largura, distância e ângulo.\n• Separação de rejeito: o sinal NG aciona um pistão, desviador ou alarme para retirar o produto não conforme da linha.\n\nIndicada para indústrias de alimentos e bebidas, cosméticos, autopeças, eletroeletrônicos, plásticos e metalurgia.",
     ficha: [
       ["Modelo", "Hikrobot MV-SC3016C-06M-WBN (série SC3000)"],
