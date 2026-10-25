@@ -196,15 +196,15 @@ a.btn[href*="mercadolivre"]:hover { background: #fff159; filter: none; }
 .svc-linha h3 { margin: 4px 0 6px; font-size: 1.15rem; }
 .svc-linha p { margin: 0; color: var(--fg2); font-size: .9375rem; }
 .svc-tag { font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent) !important; }
-.svc-marcas { font-weight: 600; color: var(--fg) !important; font-size: 1rem !important; margin: 0 0 10px !important; }
+.svc-marcas { font-weight: 600; color: var(--fg) !important; font-size: 1rem !important; margin: 6px 0 8px !important; }
 .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: clamp(24px, 4vw, 48px); margin-top: 40px; }
 .svc-bloco h3 { margin: 0 0 14px; font-size: 1.15rem; }
 .svc-lista { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .svc-lista li { position: relative; padding-left: 26px; color: var(--fg2); font-size: .9375rem; }
 .svc-lista li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 12px; height: 7px; border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
 .svc-passos { list-style: none; counter-reset: p; margin: 0; padding: 0; display: grid; gap: 12px; }
-.svc-passos li { counter-increment: p; display: grid; grid-template-columns: 2.25rem 1fr; column-gap: 12px; }
-.svc-passos li::before { content: "0" counter(p); grid-row: span 2; font-family: var(--mono); color: var(--accent); font-size: .8125rem; letter-spacing: .08em; padding-top: 3px; }
+.svc-passos li { counter-increment: p; display: grid; grid-template-columns: 2.25rem 1fr; column-gap: 12px; align-items: baseline; }
+.svc-passos li::before { content: "0" counter(p); font-family: var(--mono); color: var(--accent); font-size: .8125rem; letter-spacing: .08em; padding-top: 3px; }
 .svc-passos b { font-size: 1rem; }
 .svc-passos span { color: var(--fg2); font-size: .9375rem; }
 .svc-cta { margin-top: 40px; background: var(--card); }
