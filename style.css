@@ -127,7 +127,7 @@ a { color: inherit; }
 .btn-off { background: transparent; color: var(--fg3); border-color: var(--edge); cursor: default; }
 .det-tec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(24px, 5vw, 56px); margin-top: clamp(32px, 6vw, 64px); padding-top: clamp(24px, 4vw, 40px); border-top: 1px solid var(--sep); align-items: start; }
 .det .det-h { font-family: var(--mono); font-size: .75rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 14px; }
-.det-aplic { color: var(--fg2); margin: 0; max-width: 60ch; }
+.det-aplic { color: var(--fg2); margin: 0; max-width: 60ch; white-space: pre-line; }
 .ficha-wrap { overflow-x: auto; border: 1px solid var(--edge); border-radius: 14px; background: var(--card); }
 .ficha { width: 100%; border-collapse: collapse; font-size: .9375rem; }
 .ficha th, .ficha td { text-align: left; vertical-align: top; padding: 11px 16px; border-bottom: 1px solid var(--sep); }
