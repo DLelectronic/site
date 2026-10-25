@@ -223,7 +223,7 @@ window.DL_PRODUTOS = [
 
   { id: "hikrobot-sc3016c", nome: "Câmera Inteligente Hikrobot MV-SC3016C-06M-WBN — Sensor de Visão 1,6 MP Colorido", cat: "Visão", marca: "Hikrobot",
     resumo: "Câmera com software embarcado: inspeciona, decide OK/NG e avisa o CLP. Sem PC.",
-    soDireto: true, precoDireto: 6990,
+    soDireto: true, precoDireto: 4990,
     img: "img/hikrobot-sc3016c.jpg",
     fotoNota: "Imagem do fabricante. Medidas em mm; fixação traseira por 4 furos M4.",
     software: { marca: "HIKROBOT", fab: "Hikrobot", nome: "SCMVS", tag: "gratuito",
@@ -259,7 +259,7 @@ window.DL_PRODUTOS = [
     ],
     fichaNota: "Dados conforme a documentação do fabricante. Também disponível com lente de 12 mm ou 15 mm para inspeções de perto, sob consulta.",
     nota: "A câmera é vendida sem configuração. Cabo M12 de 17 vias e fonte 24 Vcc sob consulta. O serviço de configuração da inspeção e de integração com o seu CLP é orçado sob consulta. Fale com a gente pelo WhatsApp.",
-    waMsg: "Olá! Tenho interesse na Câmera Inteligente Hikrobot MV-SC3016C por R$ 6.990. Quero conferir se atende a minha aplicação." },
+    waMsg: "Olá! Tenho interesse na Câmera Inteligente Hikrobot MV-SC3016C por R$ 4.990. Quero conferir se atende a minha aplicação." },
 
   { id: "hikrobot-mv-cs016", nome: "Câmera industrial Hikrobot MV-CS016-10UC", cat: "Visão", marca: "Hikrobot",
     resumo: "1,6 MP colorida, global shutter, USB 3.0.",
