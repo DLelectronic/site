@@ -335,7 +335,8 @@ window.DL_PRODUTOS = [
       ["Crosstalk", "−137 dB (DAC)"],
       ["Modos", "Amplificador de fone, fone + linha, DAC e pré-amplificador"]
     ],
-    preco: 1800, precoDireto: 1564, img: "img/topping-dx3-pro-plus.jpg" },
+    preco: 1800, precoDireto: 1564, img: "img/topping-dx3-pro-plus.jpg",
+    link: "https://www.mercadolivre.com.br/up/MLBU5594968155?pdp_filters=item_id%3AMLB7860479566" },
   { id: "painel-siemens", nome: "Painel de Comando CLP + IHM 7\" Siemens", cat: "Painéis", marca: "Siemens",
     resumo: "Painel montado e testado: CLP S7-200 SMART 24 E / 16 S e IHM SMART 700 IE V4 na porta.",
     soDireto: true, precoDireto: 9990,
