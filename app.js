@@ -29,6 +29,23 @@
     });
   }
 
+  /* ---------- Google Ads: tag e conversões (clique no WhatsApp / Mercado Livre) ---------- */
+  var ga = cfg.gads;
+  if (ga && ga.id) {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", ga.id);
+    var gt = document.createElement("script");
+    gt.async = true; gt.src = "https://www.googletagmanager.com/gtag/js?id=" + ga.id;
+    document.head.appendChild(gt);
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest("a"); if (!a) return;
+      var lbl = /wa\.me/.test(a.href) ? ga.wa : (/mercadolivre/.test(a.href) ? ga.ml : null);
+      if (lbl) window.gtag("event", "conversion", { send_to: ga.id + "/" + lbl });
+    });
+  }
+
   function waLink(texto) {
     return "https://wa.me/" + cfg.whatsapp + "?text=" + encodeURIComponent(texto);
   }

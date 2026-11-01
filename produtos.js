@@ -5,7 +5,8 @@
 window.DL_CONFIG = {
   whatsapp: "5514998714561",
   loja: "https://www.mercadolivre.com.br/pagina/dlelectronic",
-  goatcounter: "dlelectronic"   /* código da conta GoatCounter (ex.: "dlelectronic"); vazio = contador desligado */
+  goatcounter: "dlelectronic",  /* código da conta GoatCounter (ex.: "dlelectronic"); vazio = contador desligado */
+  gads: { id: "AW-17629048878", wa: "lqdmCLnd568dEK7gl9ZB", ml: "i5kyCL7c568dEK7gl9ZB" }  /* Google Ads: tag e rótulos das conversões; null = desligado */
 };
 
 window.DL_PRODUTOS = [
