@@ -5,6 +5,7 @@
   var grid = document.getElementById("grid");
   var home = document.querySelectorAll("[data-home]");
   var det = document.getElementById("detalhe");
+  var paginaPid = det && det.dataset.pagina; /* página própria de produto (/produto/<id>/) */
 
   /* ---------- contador de visitas (GoatCounter, sem cookies) ---------- */
   var gcFila = [];
@@ -23,7 +24,7 @@
     document.head.appendChild(gs);
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a"); if (!a) return;
-      var pid = det.hidden ? "" : (det.dataset.pid || "");
+      var pid = paginaPid || (det.hidden ? "" : (det.dataset.pid || ""));
       if (/wa\.me/.test(a.href)) conta("clique-whatsapp/" + (pid || "geral"), "WhatsApp" + (pid ? " – " + pid : ""), true);
       else if (/mercadolivre/.test(a.href)) conta("clique-ml/" + (pid || "loja"), "Mercado Livre" + (pid ? " – " + pid : ""), true);
     });
@@ -59,7 +60,7 @@
   /* ---------- lista ---------- */
   function card(p) {
     var a = el("a", "card");
-    a.href = "#p-" + p.id;
+    a.href = p.pagina ? "produto/" + p.id + "/" : "#p-" + p.id;
     a.dataset.cat = p.cat;
     var fig = el("div", "card-img" + (p.imgs ? " is-photo" : ""));
     var img = el("img"); img.src = p.img; img.alt = p.nome; img.loading = "lazy"; img.width = 400; img.height = 400;
@@ -89,7 +90,7 @@
     a.append(fig, body);
     return a;
   }
-  itens.forEach(function (p) { grid.appendChild(card(p)); });
+  if (grid) itens.forEach(function (p) { grid.appendChild(card(p)); });
 
   document.querySelectorAll(".chip").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -235,6 +236,7 @@
   function route() {
     var h = location.hash.replace("#", "");
     var p = h.indexOf("p-") === 0 && itens.find(function (x) { return "p-" + x.id === h; });
+    if (p && p.pagina && /^http/.test(location.protocol)) { location.replace("produto/" + p.id + "/"); return; }
     if (p) {
       renderDetalhe(p);
       det.dataset.pid = p.id;
@@ -250,8 +252,13 @@
       if (h) { var t = document.getElementById(h); if (t) t.scrollIntoView(); }
     }
   }
-  window.addEventListener("hashchange", route);
-  route();
+  if (paginaPid) {
+    var pp = itens.find(function (x) { return x.id === paginaPid; });
+    conta("/produto/" + paginaPid, pp ? pp.nome : paginaPid);
+  } else if (grid) {
+    window.addEventListener("hashchange", route);
+    route();
+  }
 
   /* ---------- WhatsApp geral ---------- */
   if (cfg.whatsapp) {

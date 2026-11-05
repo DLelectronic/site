@@ -68,7 +68,7 @@ window.DL_PRODUTOS = [
     ],
     fichaNota: "Dados conforme a documentação do fabricante. Confirme o código do modelo antes de comprar.",
     waMsg: "Olá! Tenho interesse no Inversor Delta VFD007EL21A (1 CV 220 V) por R$ 1.290. Tem disponível?" },
-  { id: "dop-107bv", nome: "IHM Delta DOP-107BV", cat: "IHM", marca: "Delta",
+  { id: "dop-107bv", nome: "IHM Delta DOP-107BV", cat: "IHM", marca: "Delta", pagina: true,
     resumo: 'Tela touch 7" TFT 800×480, 2 portas seriais e USB.',
     aplicacao: "IHM de 7\" de entrada da linha DOP-100, muito usada em máquinas têxteis, bobinadeiras, estações de bombeamento, fornos industriais, equipamentos de climatização e linhas de transporte. Comunica por serial com CLPs Delta (DVP, AS), inversores e servos Delta e com CLPs de outras marcas via Modbus. É reposição direta em máquinas nacionais e chinesas que já saem de fábrica com ela.",
     ficha: [
