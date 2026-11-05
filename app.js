@@ -24,7 +24,7 @@
     document.head.appendChild(gs);
     document.addEventListener("click", function (e) {
       var a = e.target.closest("a"); if (!a) return;
-      var pid = paginaPid || (det.hidden ? "" : (det.dataset.pid || ""));
+      var pid = paginaPid || (det && !det.hidden ? (det.dataset.pid || "") : "");
       if (/wa\.me/.test(a.href)) conta("clique-whatsapp/" + (pid || "geral"), "WhatsApp" + (pid ? " – " + pid : ""), true);
       else if (/mercadolivre/.test(a.href)) conta("clique-ml/" + (pid || "loja"), "Mercado Livre" + (pid ? " – " + pid : ""), true);
     });
@@ -258,6 +258,8 @@
   } else if (grid) {
     window.addEventListener("hashchange", route);
     route();
+  } else {
+    conta(location.pathname, document.title);
   }
 
   /* ---------- WhatsApp geral ---------- */

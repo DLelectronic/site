@@ -141,7 +141,7 @@ def pagina(p):
     <img src="/img/logo-escuro.png" alt="DL Electronic" width="859" height="548" class="foot-logo">
     <div>
       <p>DL Electronic Solutions LTDA · CNPJ 66.814.414/0001-62</p>
-      <p><a href="{e(cfg["loja"])}" target="_blank" rel="noopener">Loja oficial no Mercado Livre</a><span class="js-wa-foot" hidden> · <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></span></p>
+      <p><a href="{e(cfg["loja"])}" target="_blank" rel="noopener">Loja oficial no Mercado Livre</a> · <a href="/politicas/">Trocas, devoluções e garantia</a><span class="js-wa-foot" hidden> · <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></span></p>
     </div>
   </div>
 </footer>
@@ -159,6 +159,8 @@ def pagina(p):
 
 hoje = datetime.date.today().isoformat()
 urls = [(SITE + "/", hoje)]
+if os.path.exists(os.path.join(RAIZ, "politicas", "index.html")):
+    urls.append((SITE + "/politicas/", hoje))
 for p in itens:
     if not p.get("pagina"):
         continue
