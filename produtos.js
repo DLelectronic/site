@@ -291,7 +291,7 @@ window.DL_PRODUTOS = [
     nota: "A câmera é vendida sem configuração. Cabo M12 de 17 vias e fonte 24 Vcc sob consulta. O serviço de configuração da inspeção e de integração com o seu CLP é orçado sob consulta. Fale com a gente pelo WhatsApp.",
     waMsg: "Olá! Tenho interesse na Câmera Inteligente Hikrobot MV-SC3016C por R$ 4.990. Quero conferir se atende a minha aplicação." },
 
-  { id: "hikrobot-mv-cs016", nome: "Câmera industrial Hikrobot MV-CS016-10UC", cat: "Visão", marca: "Hikrobot",
+  { id: "hikrobot-mv-cs016", nome: "Câmera industrial Hikrobot MV-CS016-10UC", cat: "Visão", marca: "Hikrobot", pagina: true,
     resumo: "1,6 MP colorida, global shutter, USB 3.0.",
     aplicacao: "Câmera de visão de máquina para inspeção em linha: presença de peças, leitura de códigos, conferência de rótulos e cores, medição e guiagem de robôs. O global shutter congela objetos em movimento rápido sem distorção, e o padrão USB3 Vision funciona com o software MVS da Hikrobot, Halcon, OpenCV e outros.",
     ficha: [
@@ -321,7 +321,7 @@ window.DL_PRODUTOS = [
     preco: 2500, precoDireto: 2201, img: "img/hikrobot-mv-cs016.jpg",
     link: "https://www.mercadolivre.com.br/camera-industrial-hikrobot-mvcs01610uc-usb-30-16mp/up/MLBU4473594818?pdp_filters=item_id%3AMLB7267176056" },
 
-  { id: "topping-dx5-ii", nome: "TOPPING DX5 II", cat: "Áudio", marca: "TOPPING",
+  { id: "topping-dx5-ii", nome: "TOPPING DX5 II", cat: "Áudio", marca: "TOPPING", pagina: true,
     resumo: "DAC e amplificador de fone com dois ES9039Q2M.",
     aplicacao: "DAC e amplificador de fone de mesa para quem quer áudio de referência no computador, no setup de música ou no estúdio caseiro. Toca arquivos em alta resolução, recebe Bluetooth LDAC do celular e também funciona como pré-amplificador para caixas ativas ou amplificador de potência.",
     ficha: [
