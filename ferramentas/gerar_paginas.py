@@ -128,6 +128,7 @@ def pagina(p):
           <h1 class="det-title">{e(p["nome"])}</h1>
           <p class="det-resumo">{e(p["resumo"])}</p>
           <div class="buy">{buy}</div>
+          <ul class="selos"><li>Nota fiscal</li><li><a href="/politicas/">Garantia de 90 dias</a></li><li>Postagem em até 2 dias úteis</li></ul>
         </div>
       </div>
       <div class="det-tec">{tec}</div>
@@ -141,7 +142,7 @@ def pagina(p):
     <img src="/img/logo-escuro.png" alt="DL Electronic" width="859" height="548" class="foot-logo">
     <div>
       <p>DL Electronic Solutions LTDA · CNPJ 66.814.414/0001-62</p>
-      <p><a href="{e(cfg["loja"])}" target="_blank" rel="noopener">Loja oficial no Mercado Livre</a> · <a href="/politicas/">Trocas, devoluções e garantia</a><span class="js-wa-foot" hidden> · <a class="js-wa" href="#" target="_blank" rel="noopener">WhatsApp</a></span></p>
+      <p><a href="{e(cfg["loja"])}" target="_blank" rel="noopener">Loja oficial no Mercado Livre</a> · <a href="/politicas/">Trocas, devoluções e garantia</a> · <a class="js-wa" data-wa-msg="Olá! Vim pelo site da DL Electronic." href="https://wa.me/5514998714561" target="_blank" rel="noopener">WhatsApp (14) 99871-4561</a></p>
     </div>
   </div>
 </footer>

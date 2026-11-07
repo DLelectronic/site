@@ -60,6 +60,7 @@
   /* ---------- lista ---------- */
   function card(p) {
     var a = el("a", "card");
+    a.dataset.busca = [p.id, p.nome, p.marca, p.cat, p.resumo].concat((p.ficha || []).map(function (r) { return r[1]; })).join(" ").toLowerCase();
     a.href = p.pagina ? "produto/" + p.id + "/" : "#p-" + p.id;
     a.dataset.cat = p.cat;
     var fig = el("div", "card-img" + (p.imgs ? " is-photo" : ""));
@@ -90,7 +91,32 @@
     a.append(fig, body);
     return a;
   }
-  if (grid) itens.forEach(function (p) { grid.appendChild(card(p)); });
+  var gridAudio = document.getElementById("grid-audio");
+  if (grid) itens.forEach(function (p) { (p.cat === "Áudio" && gridAudio ? gridAudio : grid).appendChild(card(p)); });
+
+  /* ---------- busca por código ---------- */
+  var catAtual = "todos";
+  var busca = document.getElementById("busca");
+  function norm(t) { return (t || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[\s\-_.\/]+/g, ""); }
+  function filtra() {
+    var q = norm(busca && busca.value), vis = 0;
+    document.querySelectorAll(".card").forEach(function (c) {
+      var okCat = c.closest("#grid-audio") ? true : (catAtual === "todos" || c.dataset.cat === catAtual);
+      var okQ = !q || norm(c.dataset.busca).indexOf(q) >= 0;
+      c.hidden = !(okCat && okQ); if (!c.hidden) vis++;
+    });
+    var secA = document.getElementById("audio");
+    if (secA) secA.classList.toggle("sem-itens", !!q && !secA.querySelector(".card:not([hidden])"));
+    var vz = document.getElementById("busca-vazio");
+    if (vz) {
+      vz.hidden = !(q && vis === 0);
+      if (!vz.hidden) {
+        document.getElementById("busca-termo").textContent = busca.value;
+        document.getElementById("busca-wa").href = waLink("Olá! Vocês têm o modelo " + busca.value + "?");
+      }
+    }
+  }
+  if (busca) busca.addEventListener("input", filtra);
 
   document.querySelectorAll(".chip").forEach(function (b) {
     b.addEventListener("click", function () {
@@ -98,9 +124,7 @@
       document.querySelectorAll(".chip").forEach(function (c) {
         var on = c === b; c.classList.toggle("is-on", on); c.setAttribute("aria-selected", String(on));
       });
-      grid.querySelectorAll(".card").forEach(function (c) {
-        c.hidden = !(cat === "todos" || c.dataset.cat === cat);
-      });
+      catAtual = cat; filtra();
     });
   });
 
@@ -167,6 +191,9 @@
     buy.append(ml, dir);
     info.appendChild(buy);
     }
+    var selos = el("ul", "selos");
+    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, "Postagem em até 2 dias úteis"));
+    info.appendChild(selos);
 
     if (p.software) {
       var sw = p.software, sb = el("div", "soft-box");
