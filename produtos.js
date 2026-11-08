@@ -11,22 +11,22 @@ window.DL_CONFIG = {
 
 window.DL_PRODUTOS = [
   { id: "painel-delta", nome: "Painel de Comando CLP + IHM 7\" Delta", cat: "Painéis", marca: "Delta",
-    resumo: "Painel montado e testado: CLP 24 E / 16 S e IHM touch 7\" na porta.",
+    resumo: "Painel montado e testado: CLP Delta DVP-SS2, IHM touch 7\" e comandos na porta.",
     soDireto: true, precoDireto: 7990,
-    img: "img/painel-delta-porta-1.jpg",
-    imgs: ["img/painel-delta-porta-1.jpg", "img/painel-delta-porta-2.jpg", "img/painel-delta-3.jpg", "img/painel-delta-5.jpg"],
-    fotoNota: "Fotos ilustrativas. A configuração interna segue a lista de componentes abaixo.",
+    img: "img/painel-delta-frente.png",
+    imgs: ["img/painel-delta-frente.png", "img/painel-delta-layout.png"],
+    fotoNota: "Desenhos ilustrativos da vista frontal e do layout interno. A configuração segue a lista de componentes abaixo.",
     aplicacao: "Painel de comando pronto para instalar, com CLP e IHM touch de 7\" já montados, fiados e testados. Solução compacta e econômica para automatizar máquinas, bancadas de teste, sistemas de bombeamento, climatização, fornos, transportadores e processos industriais em geral. Sai de fábrica com projeto elétrico, layout, montagem, fiação identificada e testes elétricos e funcionais de entradas, saídas e emergência.",
     componentes: [
-      ["Controle", ["CLP Delta DVP40ES200R: 24 entradas digitais e 16 saídas a relé", "IHM Delta DOP-107BV: touch screen colorida 7\" 800×480, 2 portas seriais e USB, montada na porta"]],
+      ["Controle", ["CLP Delta série DVP-SS2 (modelo definido conforme o projeto)", "IHM Delta DOP-107BV: touch screen colorida 7\" 800×480, 2 portas seriais e USB, montada na porta"]],
       ["Gabinete", ["Caixa em aço carbono 600 × 500 × 250 mm, grau de proteção IP54", "Porta com fechadura", "Placa de montagem, trilho DIN 35 mm e canaletas 30 × 50 mm", "Prensa-cabos e entrada de cabos pela parte inferior", "Porta-documentos"]],
-      ["Alimentação e proteção", ["Chave seccionadora tripolar 20 A", "Disjuntor geral bipolar 16 A, curva C (Siemens)", "Fonte de alimentação 24 Vcc 5 A (Novus)", "4 bornes porta-fusível 4 mm²"]],
+      ["Alimentação e proteção", ["Chave geral seccionadora tripolar 20 A, com manopla na lateral do gabinete", "Disjuntor geral bipolar 16 A, curva C (Siemens)", "Fonte de alimentação 24 Vcc 5 A (Novus)", "4 bornes porta-fusível 4 mm²"]],
       ["Conexões", ["60 bornes de passagem 2,5 mm² (Siemens)", "10 bornes de terra 2,5 mm² (Siemens)", "Fiação de comando com terminais e anilhas de identificação"]],
-      ["Comando e sinalização", ["Botão de emergência tipo cogumelo (Siemens)", "Sinaleiro luminoso (Siemens)"]],
+      ["Comando e sinalização", ["Botão de emergência tipo cogumelo (Siemens)", "2 botoeiras 22 mm na porta: Liga (verde) e Desliga (vermelha)"]],
       ["Acompanha", ["Painel montado, fiado e testado", "Diagrama elétrico do painel", "Embalagem de proteção para transporte"]]
     ],
     ficha: [
-      ["CLP", "Delta DVP40ES200R — 24 ED / 16 SD a relé"],
+      ["CLP", "Delta série DVP-SS2"],
       ["IHM", "Delta DOP-107BV — 7\" TFT 800 × 480, touch"],
       ["Alimentação", "220 Vca"],
       ["Tensão de comando", "24 Vcc"],
