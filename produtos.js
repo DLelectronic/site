@@ -13,8 +13,8 @@ window.DL_PRODUTOS = [
   { id: "painel-delta", nome: "Painel de Comando CLP + IHM 7\" Delta", cat: "Painéis", marca: "Delta",
     resumo: "Painel montado e testado: CLP 24 E / 16 S e IHM touch 7\" na porta.",
     soDireto: true, precoDireto: 7990,
-    img: "img/painel-delta-1.jpg",
-    imgs: ["img/painel-delta-1.jpg", "img/painel-delta-2.jpg", "img/painel-delta-3.jpg", "img/painel-delta-5.jpg"],
+    img: "img/painel-delta-porta-1.jpg",
+    imgs: ["img/painel-delta-porta-1.jpg", "img/painel-delta-porta-2.jpg", "img/painel-delta-3.jpg", "img/painel-delta-5.jpg"],
     fotoNota: "Fotos ilustrativas. A configuração interna segue a lista de componentes abaixo.",
     aplicacao: "Painel de comando pronto para instalar, com CLP e IHM touch de 7\" já montados, fiados e testados. Solução compacta e econômica para automatizar máquinas, bancadas de teste, sistemas de bombeamento, climatização, fornos, transportadores e processos industriais em geral. Sai de fábrica com projeto elétrico, layout, montagem, fiação identificada e testes elétricos e funcionais de entradas, saídas e emergência.",
     componentes: [
