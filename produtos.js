@@ -204,6 +204,7 @@ window.DL_PRODUTOS = [
       ["Certificação", "CE"],
       ["Software", "Kinco DTools (V3.2 ou superior)"]
     ],
+    chegando: "dezembro",
     preco: 1190, precoDireto: 1023, img: "img/kinco-gl070e.jpg",
     link: "https://www.mercadolivre.com.br/ihm-kinco-gl070e-7-touch-ethernet-rs485-industrial/up/MLBU4561390179?pdp_filters=item_id%3AMLB7328002370" },
 

@@ -66,6 +66,7 @@
     var fig = el("div", "card-img" + (p.imgs ? " is-photo" : ""));
     var img = el("img"); img.src = p.img; img.alt = p.nome; img.loading = "lazy"; img.width = 400; img.height = 400;
     fig.appendChild(img);
+    if (p.chegando) fig.appendChild(el("span", "badge-chegando", "Chegando em " + p.chegando));
     var body = el("div", "card-body");
     body.append(
       el("span", "tag", p.marca + " · " + p.cat),
@@ -77,10 +78,13 @@
       pd.appendChild(el("span", "preco-tag", " venda direta"));
       body.appendChild(pd);
       body.appendChild(el("p", "preco-wa", "Orçamento e pagamento pelo WhatsApp"));
-    } else {
+    } else if (!p.chegando) {
     var preco = el("p", "preco", brl.format(p.preco));
     preco.appendChild(el("span", "preco-tag", " no Mercado Livre"));
     body.appendChild(preco);
+    }
+    if (p.chegando) {
+      body.appendChild(el("p", "preco-wa chegando-txt", "Chegando em " + p.chegando + " · reserve pelo WhatsApp"));
     }
     if (p.precoDireto && !p.soDireto) {
       var dir = el("p", "preco-wa");
@@ -158,7 +162,16 @@
     info.append(el("span", "tag", p.marca + " · " + p.cat), el("h1", "det-title", p.nome), el("p", "det-resumo", p.resumo));
 
     var buy = el("div", "buy");
-    if (p.soDireto) {
+    if (p.chegando) {
+      var rs = el("div", "buy-opt buy-direct buy-chegando");
+      rs.append(el("span", "buy-lbl", "Chegando em " + p.chegando + " · reserve já"),
+        el("strong", "buy-price", brl.format(p.precoDireto)),
+        el("span", "buy-sub", "Preço da venda direta (Pix). Garanta a sua unidade do próximo lote; avisamos assim que chegar."));
+      var wr = el("a", "btn btn-wa", "Reservar pelo WhatsApp");
+      wr.href = waLink("Olá! Quero reservar o produto " + p.nome + " (chegada em " + p.chegando + ") por " + brl.format(p.precoDireto) + ".");
+      wr.target = "_blank"; wr.rel = "noopener"; rs.appendChild(wr);
+      buy.appendChild(rs); info.appendChild(buy);
+    } else if (p.soDireto) {
       var so = el("div", "buy-opt buy-direct");
       so.append(el("span", "buy-lbl", "Venda direta DL Electronic"), el("strong", "buy-price", brl.format(p.precoDireto)),
         el("span", "buy-sub", "Pix ou transferência · frete e prazo sob consulta"));
@@ -192,7 +205,7 @@
     info.appendChild(buy);
     }
     var selos = el("ul", "selos");
-    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, "Postagem em até 2 dias úteis"));
+    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, p.chegando ? "Envio logo após a chegada do lote" : "Postagem em até 2 dias úteis"));
     info.appendChild(selos);
 
     if (p.software) {
