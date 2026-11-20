@@ -36,7 +36,7 @@ window.DL_PRODUTOS = [
     ],
     fichaNota: "Especificações do painel padrão. Alterações sob consulta.",
     nota: "O painel é entregue com o CLP e a IHM sem programa de aplicação. O serviço de programação do CLP e de desenvolvimento das telas da IHM, sob medida para a sua máquina ou processo, é orçado sob consulta. Fale com a gente pelo WhatsApp.",
-    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Delta por R$ 7.990. Pode me passar prazo e condições?" },
+    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Delta por R$ 7.995. Pode me passar prazo e condições?" },
   { id: "vfd007el21a", nome: "Inversor de Frequência Delta VFD007EL21A — 1 CV 220 V", cat: "Inversores", marca: "Delta",
     resumo: "VFD-EL 0,75 kW, entrada 220 V monofásica, saída trifásica, filtro EMC e RS-485.",
     soDireto: true, precoDireto: 1290,
