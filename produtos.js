@@ -12,7 +12,7 @@ window.DL_CONFIG = {
 window.DL_PRODUTOS = [
   { id: "painel-delta", nome: "Painel de Comando CLP + IHM 7\" Delta", cat: "Painéis", marca: "Delta",
     resumo: "Painel montado e testado: CLP Delta DVP-SS2, IHM touch 7\" e comandos na porta.",
-    soDireto: true, precoDireto: 7990,
+    soDireto: true, precoDireto: 7995,
     img: "img/painel-delta-frente.png",
     imgs: ["img/painel-delta-frente.png", "img/painel-delta-layout.png"],
     fotoNota: "Desenhos ilustrativos da vista frontal e do layout interno. A configuração segue a lista de componentes abaixo.",
