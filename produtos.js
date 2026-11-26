@@ -12,7 +12,7 @@ window.DL_CONFIG = {
 window.DL_PRODUTOS = [
   { id: "painel-delta", nome: "Painel de Comando CLP + IHM 7\" Delta", cat: "Painéis", marca: "Delta",
     resumo: "Painel montado e testado: CLP Delta DVP-SS2, IHM touch 7\" e comandos na porta.",
-    soDireto: true, precoDireto: 7995,
+    soDireto: true, precoDireto: 7990,
     img: "img/painel-delta-frente.png",
     imgs: ["img/painel-delta-frente.png", "img/painel-delta-layout.png"],
     fotoNota: "Desenhos ilustrativos da vista frontal e do layout interno. A configuração segue a lista de componentes abaixo.",
@@ -36,7 +36,7 @@ window.DL_PRODUTOS = [
     ],
     fichaNota: "Especificações do painel padrão. Alterações sob consulta.",
     nota: "O painel é entregue com o CLP e a IHM sem programa de aplicação. O serviço de programação do CLP e de desenvolvimento das telas da IHM, sob medida para a sua máquina ou processo, é orçado sob consulta. Fale com a gente pelo WhatsApp.",
-    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Delta por R$ 7.995. Pode me passar prazo e condições?" },
+    waMsg: "Olá! Tenho interesse no Painel de Comando CLP + IHM 7\" Delta por R$ 7.990. Pode me passar prazo e condições?" },
   { id: "vfd007el21a", nome: "Inversor de Frequência Delta VFD007EL21A — 1 CV 220 V", cat: "Inversores", marca: "Delta",
     resumo: "VFD-EL 0,75 kW, entrada 220 V monofásica, saída trifásica, filtro EMC e RS-485.",
     soDireto: true, precoDireto: 1290,
