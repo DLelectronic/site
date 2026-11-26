@@ -67,6 +67,7 @@
     var img = el("img"); img.src = p.img; img.alt = p.nome; img.loading = "lazy"; img.width = 400; img.height = 400;
     fig.appendChild(img);
     if (p.chegando) fig.appendChild(el("span", "badge-chegando", "Chegando em " + p.chegando));
+    else if (p.esgotado && !p.soDireto) fig.appendChild(el("span", "badge-chegando badge-esgotado", "Esgotado"));
     var body = el("div", "card-body");
     body.append(
       el("span", "tag", p.marca + " · " + p.cat),
@@ -78,15 +79,17 @@
       pd.appendChild(el("span", "preco-tag", " venda direta"));
       body.appendChild(pd);
       body.appendChild(el("p", "preco-wa", "Orçamento e pagamento pelo WhatsApp"));
-    } else if (!p.chegando) {
+    } else if (!p.chegando && !p.esgotado) {
     var preco = el("p", "preco", brl.format(p.preco));
     preco.appendChild(el("span", "preco-tag", " no Mercado Livre"));
     body.appendChild(preco);
     }
     if (p.chegando) {
       body.appendChild(el("p", "preco-wa chegando-txt", "Chegando em " + p.chegando + " · reserve pelo WhatsApp"));
+    } else if (p.esgotado && !p.soDireto) {
+      body.appendChild(el("p", "preco-wa chegando-txt esgotado-txt", "Esgotado · consulte pelo WhatsApp"));
     }
-    if (p.precoDireto && !p.soDireto) {
+    if (p.precoDireto && !p.soDireto && !p.esgotado) {
       var dir = el("p", "preco-wa");
       dir.append(el("strong", null, brl.format(p.precoDireto)), el("span", null, " no WhatsApp · Pix"));
       body.appendChild(dir);
@@ -171,6 +174,14 @@
       wr.href = waLink("Olá! Quero reservar o produto " + p.nome + " (chegada em " + p.chegando + ") por " + brl.format(p.precoDireto) + ".");
       wr.target = "_blank"; wr.rel = "noopener"; rs.appendChild(wr);
       buy.appendChild(rs); info.appendChild(buy);
+    } else if (p.esgotado && !p.soDireto) {
+      var eg = el("div", "buy-opt buy-direct buy-chegando buy-esgotado");
+      eg.append(el("span", "buy-lbl", "Esgotado no momento"),
+        el("span", "buy-sub", "Fale com a gente pelo WhatsApp para saber o prazo do próximo lote ou pedir sob encomenda."));
+      var we = el("a", "btn btn-wa", "Consultar pelo WhatsApp");
+      we.href = waLink("Olá! Vi que o produto " + p.nome + " está esgotado. Qual o prazo para o próximo lote?");
+      we.target = "_blank"; we.rel = "noopener"; eg.appendChild(we);
+      buy.appendChild(eg); info.appendChild(buy);
     } else if (p.soDireto) {
       var so = el("div", "buy-opt buy-direct");
       so.append(el("span", "buy-lbl", "Venda direta DL Electronic"), el("strong", "buy-price", brl.format(p.precoDireto)),
@@ -205,7 +216,7 @@
     info.appendChild(buy);
     }
     var selos = el("ul", "selos");
-    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, p.chegando ? "Envio logo após a chegada do lote" : "Postagem em até 2 dias úteis"));
+    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, p.chegando ? "Envio logo após a chegada do lote" : (p.esgotado && !p.soDireto ? "Sob encomenda" : "Postagem em até 2 dias úteis")));
     info.appendChild(selos);
 
     if (p.software) {

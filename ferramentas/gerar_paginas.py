@@ -29,6 +29,18 @@ def wa(texto):
     return "https://wa.me/" + cfg["whatsapp"] + "?text=" + urllib.parse.quote(texto)
 
 
+def esgotado(p):
+    return bool(p.get("esgotado")) and not p.get("soDireto") and not p.get("chegando")
+
+
+def disponibilidade(p):
+    if p.get("chegando"):
+        return "https://schema.org/PreOrder"
+    if esgotado(p):
+        return "https://schema.org/OutOfStock"
+    return "https://schema.org/InStock"
+
+
 def pagina(p):
     url = f"{SITE}/produto/{p['id']}/"
     imgs = p.get("imgs") or [p["img"]]
@@ -43,7 +55,7 @@ def pagina(p):
         "brand": {"@type": "Brand", "name": p["marca"]},
         "offers": {
             "@type": "Offer", "url": url, "priceCurrency": "BRL", "price": f"{preco_oferta:.2f}",
-            "availability": "https://schema.org/InStock",
+            "availability": disponibilidade(p),
             "itemCondition": "https://schema.org/NewCondition",
             "seller": {"@type": "Organization", "name": "DL Electronic Solutions LTDA"},
         },
@@ -61,7 +73,11 @@ def pagina(p):
     nota_foto = f'<p class="note foto-nota">{e(p["fotoNota"])}</p>' if p.get("fotoNota") else ""
 
     # compra
-    if p.get("soDireto"):
+    if esgotado(p):
+        msg = f"Olá! Vi que o produto {p['nome']} está esgotado. Qual o prazo para o próximo lote?"
+        buy = f'''<div class="buy-opt buy-direct buy-chegando buy-esgotado"><span class="buy-lbl">Esgotado no momento</span><span class="buy-sub">Fale com a gente pelo WhatsApp para saber o prazo do próximo lote ou pedir sob encomenda.</span>
+          <a class="btn btn-wa" href="{e(wa(msg))}" target="_blank" rel="noopener">Consultar pelo WhatsApp</a></div>'''
+    elif p.get("soDireto"):
         buy = f'''<div class="buy-opt buy-direct"><span class="buy-lbl">Venda direta DL Electronic</span><strong class="buy-price">{brl(p["precoDireto"])}</strong><span class="buy-sub">Pix ou transferência · frete e prazo sob consulta</span>
           <a class="btn btn-wa" href="{e(wa(p.get("waMsg") or f"Olá! Tenho interesse no {p['nome']}."))}" target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a></div>'''
     else:
@@ -128,7 +144,7 @@ def pagina(p):
           <h1 class="det-title">{e(p["nome"])}</h1>
           <p class="det-resumo">{e(p["resumo"])}</p>
           <div class="buy">{buy}</div>
-          <ul class="selos"><li>Nota fiscal</li><li><a href="/politicas/">Garantia de 90 dias</a></li><li>Postagem em até 2 dias úteis</li></ul>
+          <ul class="selos"><li>Nota fiscal</li><li><a href="/politicas/">Garantia de 90 dias</a></li><li>{"Sob encomenda" if esgotado(p) else "Postagem em até 2 dias úteis"}</li></ul>
         </div>
       </div>
       <div class="det-tec">{tec}</div>

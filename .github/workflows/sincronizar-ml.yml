@@ -1,0 +1,70 @@
+# Lê preço e estoque dos anúncios do Mercado Livre e atualiza o site.
+# Segredos necessários (Settings → Secrets and variables → Actions):
+#   ML_CLIENT_ID, ML_CLIENT_SECRET  – do app criado em developers.mercadolivre.com.br
+#   ML_REFRESH_TOKEN                – gravado pelo workflow "Conectar Mercado Livre"
+#   GH_PAT                          – token do GitHub com Contents e Secrets (leitura e escrita) neste repositório
+name: Sincronizar Mercado Livre
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"   # a cada 2 horas
+  workflow_dispatch:
+
+concurrency:
+  group: mercado-livre       # o ML troca o token a cada uso: nunca rodar dois ao mesmo tempo
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar configuração
+        id: cfg
+        env:
+          RT: ${{ secrets.ML_REFRESH_TOKEN }}
+          PAT: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$RT" ] || [ -z "$PAT" ]; then
+            echo "Integração ainda não configurada (faltam ML_REFRESH_TOKEN ou GH_PAT). Nada a fazer."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.cfg.outputs.ok == 'true'
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Ler anúncios e atualizar o site
+        if: steps.cfg.outputs.ok == 'true'
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
+          ML_NOVO_TOKEN_ARQ: ${{ runner.temp }}/ml_token
+        run: python3 ferramentas/sincronizar_ml.py
+
+      - name: Guardar o novo token do Mercado Livre
+        if: always() && steps.cfg.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          ARQ: ${{ runner.temp }}/ml_token
+        run: |
+          if [ -s "$ARQ" ]; then
+            gh secret set ML_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "$ARQ"
+            rm -f "$ARQ"
+          fi
+
+      - name: Publicar mudanças
+        if: steps.cfg.outputs.ok == 'true'
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "DL Electronic (sincronização ML)"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Sincroniza preço e estoque com o Mercado Livre"
+            git push
+          else
+            echo "Nada mudou."
+          fi
