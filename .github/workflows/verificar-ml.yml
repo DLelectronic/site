@@ -1,0 +1,60 @@
+# Diagnóstico da integração com o Mercado Livre. Não altera nada: só confere se os
+# segredos existem e se o token do GitHub tem as permissões certas.
+name: Verificar integração ML
+
+on:
+  workflow_dispatch:
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Conferir segredos e permissões
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
+        run: |
+          for n in GH_PAT ML_CLIENT_ID ML_CLIENT_SECRET ML_REFRESH_TOKEN; do
+            if [ -n "$(printf '%s' "${!n}" | tr -d '[:space:]')" ]; then echo "$n: ok"; else echo "$n: FALTANDO"; fi
+          done
+
+          PAT="$(printf '%s' "$GH_PAT" | tr -d '[:space:]')"
+          if [ -n "$PAT" ]; then
+            if GH_TOKEN="$PAT" gh api "repos/$GITHUB_REPOSITORY/actions/secrets/public-key" >/dev/null 2>&1; then
+              echo "GH_PAT permissão Secrets: ok"
+            else
+              echo "GH_PAT permissão Secrets: FALTANDO (precisa de Secrets: Read and write)"
+            fi
+            code=$(curl -s -o /dev/null -w '%{http_code}' -u "dl:$PAT" \
+              "https://github.com/$GITHUB_REPOSITORY.git/info/refs?service=git-receive-pack")
+            if [ "$code" = "200" ]; then
+              echo "GH_PAT permissão Contents (publicar): ok"
+            else
+              echo "GH_PAT permissão Contents (publicar): FALTANDO (HTTP $code; precisa de Contents: Read and write)"
+            fi
+          fi
+
+          CID="$(printf '%s' "$ML_CLIENT_ID" | tr -d '[:space:]')"
+          CSEC="$(printf '%s' "$ML_CLIENT_SECRET" | tr -d '[:space:]')"
+          if [ -n "$CID" ]; then
+            if [[ "$CID" =~ ^[0-9]+$ ]]; then echo "ML_CLIENT_ID: formato ok (só números)"; else echo "ML_CLIENT_ID: formato estranho (o App ID do ML tem só números)"; fi
+          fi
+          if [ -n "$CID" ] && [ -n "$CSEC" ]; then
+            resp=$(curl -sS -X POST https://api.mercadolibre.com/oauth/token \
+              -H "accept: application/json" -H "content-type: application/x-www-form-urlencoded" \
+              --data-urlencode "grant_type=client_credentials" \
+              --data-urlencode "client_id=$CID" --data-urlencode "client_secret=$CSEC" || true)
+            printf '%s' "$resp" | python3 -c '
+          import json, sys
+          try:
+              d = json.load(sys.stdin)
+          except Exception:
+              print("Teste das credenciais do ML: resposta inesperada"); sys.exit(0)
+          if d.get("access_token"):
+              print("Teste das credenciais do ML: ok (App ID e chave secreta aceitos)")
+          else:
+              print("Teste das credenciais do ML:", {k: d.get(k) for k in ("error", "message", "status")})
+          '
+          fi

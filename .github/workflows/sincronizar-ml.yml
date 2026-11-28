@@ -52,6 +52,7 @@ jobs:
           ARQ: ${{ runner.temp }}/ml_token
         run: |
           if [ -s "$ARQ" ]; then
+            export GH_TOKEN="$(printf '%s' "$GH_TOKEN" | tr -d '[:space:]')"
             gh secret set ML_REFRESH_TOKEN --repo "$GITHUB_REPOSITORY" < "$ARQ"
             rm -f "$ARQ"
           fi

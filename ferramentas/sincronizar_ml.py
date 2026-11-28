@@ -60,9 +60,9 @@ def pedir(url, dados=None, token=None):
 def token_acesso():
     corpo = urllib.parse.urlencode({
         "grant_type": "refresh_token",
-        "client_id": os.environ["ML_CLIENT_ID"],
-        "client_secret": os.environ["ML_CLIENT_SECRET"],
-        "refresh_token": os.environ["ML_REFRESH_TOKEN"],
+        "client_id": os.environ["ML_CLIENT_ID"].strip(),
+        "client_secret": os.environ["ML_CLIENT_SECRET"].strip(),
+        "refresh_token": os.environ["ML_REFRESH_TOKEN"].strip(),
     }).encode()
     r = pedir(API + "/oauth/token", corpo)
     novo = r.get("refresh_token")
