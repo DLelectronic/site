@@ -97,7 +97,7 @@ window.DL_PRODUTOS = [
       ["Peso", "700 g"],
       ["Software", "DOPSoft (Delta)"]
     ],
-    preco: 1300, precoDireto: 1120, img: "img/dop-107bv-caixa.jpg",
+    preco: 1250, precoDireto: 1120, img: "img/dop-107bv-caixa.jpg",
     link: "https://www.mercadolivre.com.br/ihm-delta-dop-107bv-7-polegadas-novo-e-lacrado-com-nf/p/MLB2104500154?pdp_filters=item_id%3AMLB4705073763" },
   { id: "dop-107dv", nome: "IHM Delta DOP-107DV com Ethernet", cat: "IHM", marca: "Delta", pagina: true,
     resumo: 'Tela touch 7" TFT 800×480 com Ethernet, 2 portas seriais e USB.',
@@ -146,7 +146,7 @@ window.DL_PRODUTOS = [
       ["Profundidade", "39 mm"],
       ["Software", "TIA Portal: WinCC Basic / STEP 7 Basic (V13 ou superior)"]
     ],
-    preco: 3500, precoDireto: 3056, img: "img/ktp700-basic.jpg",
+    preco: 3790, precoDireto: 3056, img: "img/ktp700-basic.jpg",
     link: "https://www.mercadolivre.com.br/ihm-7-siemens-ktp700-basic-simatic/up/MLBU3929099882?pdp_filters=item_id%3AMLB6831114516" },
 
   { id: "smart-700-ie-v4", nome: "IHM Siemens Smart 700 IE V4", cat: "IHM", marca: "Siemens",
@@ -173,7 +173,7 @@ window.DL_PRODUTOS = [
       ["Peso", "Aprox. 770 g"],
       ["Software", "WinCC flexible SMART V4"]
     ],
-    preco: 1880, precoDireto: 1630, img: "img/smart-700-ie-v4-caixa.jpg",
+    preco: 1750, precoDireto: 1630, img: "img/smart-700-ie-v4-caixa.jpg",
     link: "https://www.mercadolivre.com.br/ihm-siemens-smart-700-ie-v4/up/MLBU3559259807?pdp_filters=item_id%3AMLB4695663787" },
 
   { id: "kinco-gl070e", nome: "IHM Kinco GL070E", cat: "IHM", marca: "Kinco",
@@ -230,7 +230,7 @@ window.DL_PRODUTOS = [
       ["Peso", "Aprox. 441 g"],
       ["Software", "STEP 7-Micro/WIN SMART (LAD, FBD, STL), gratuito"]
     ],
-    preco: 2690, precoDireto: 2343, img: "img/s7-200-smart.jpg",
+    preco: 2370, precoDireto: 2343, img: "img/s7-200-smart.jpg",
     link: "https://www.mercadolivre.com.br/clp-siemens-simatic-s7-200-smart-novolacrado-com-nt/p/MLB2095778199?pdp_filters=item_id%3AMLB4994098395" },
 
   { id: "dtk-delta", nome: "Controlador de temperatura Delta DTK", cat: "Controle", marca: "Delta",
@@ -249,7 +249,7 @@ window.DL_PRODUTOS = [
       ["Display", "LCD de alta resolução"],
       ["Temperatura de operação", "0 a 50 °C"]
     ],
-    preco: 340, precoDireto: 278, img: "img/dtk4848-v2.jpg",
+    preco: 250, precoDireto: 278, img: "img/dtk4848-v2.jpg",
     link: "https://www.mercadolivre.com.br/controlador-de-temperatura-dtk-delta/up/MLBU3805211573?pdp_filters=item_id%3AMLB4484937175" },
 
   { id: "hikrobot-sc3016c", nome: "Câmera Inteligente Hikrobot MV-SC3016C-06M-WBN — Sensor de Visão 1,6 MP Colorido", cat: "Visão", marca: "Hikrobot",
@@ -319,7 +319,7 @@ window.DL_PRODUTOS = [
       ["Sistemas", "Windows, Linux e macOS"],
       ["Certificações", "CE, FCC, RoHS, KC"]
     ],
-    preco: 2500, precoDireto: 2201, img: "img/hikrobot-mv-cs016.jpg",
+    preco: 1295, precoDireto: 2201, img: "img/hikrobot-mv-cs016.jpg",
     link: "https://www.mercadolivre.com.br/camera-industrial-hikrobot-mvcs01610uc-usb-30-16mp/up/MLBU4473594818?pdp_filters=item_id%3AMLB7267176056" },
 
   { id: "topping-dx5-ii", nome: "TOPPING DX5 II", cat: "Áudio", marca: "TOPPING", pagina: true,
@@ -342,7 +342,7 @@ window.DL_PRODUTOS = [
       ["Display", '2,0" colorido, botões e knob'],
       ["Alimentação", "Fonte interna, entrada IEC"]
     ],
-    preco: 2900, precoDireto: 2557, img: "img/topping-dx5-ii.jpg",
+    preco: 2750, precoDireto: 2557, img: "img/topping-dx5-ii.jpg",
     link: "https://www.mercadolivre.com.br/topping-dx5-2-dac-usb-e-amp-de-fones-lacradopronta-entrega/up/MLBU3825472001?pdp_filters=item_id%3AMLB6664772030" },
   { id: "topping-dx3-pro-plus", nome: "TOPPING DX3 Pro+", cat: "Áudio", marca: "TOPPING",
     resumo: "DAC ES9038Q2M e amplificador de fone com Bluetooth LDAC.",

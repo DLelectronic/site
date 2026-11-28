@@ -1,0 +1,50 @@
+{
+ "atualizado": "2026-11-28T12:26:45Z",
+ "itens": {
+  "dop-107bv": {
+   "anuncio": "MLB4705073763",
+   "disponivel": true,
+   "preco": 1250
+  },
+  "ktp700-basic": {
+   "anuncio": "MLB6831114516",
+   "disponivel": true,
+   "preco": 3790
+  },
+  "smart-700-ie-v4": {
+   "anuncio": "MLB4695663787",
+   "disponivel": true,
+   "preco": 1750
+  },
+  "kinco-gl070e": {
+   "anuncio": "MLB7328002370",
+   "disponivel": true,
+   "preco": 1190
+  },
+  "s7-200-smart": {
+   "anuncio": "MLB4994098395",
+   "disponivel": true,
+   "preco": 2370
+  },
+  "dtk-delta": {
+   "anuncio": "MLB4484937175",
+   "disponivel": true,
+   "preco": 250
+  },
+  "hikrobot-mv-cs016": {
+   "anuncio": "MLB7267176056",
+   "disponivel": true,
+   "preco": 1295
+  },
+  "topping-dx5-ii": {
+   "anuncio": "MLB6664772030",
+   "disponivel": true,
+   "preco": 2750
+  },
+  "topping-dx3-pro-plus": {
+   "anuncio": "MLB7860479566",
+   "disponivel": true,
+   "preco": 1800
+  }
+ }
+}
