@@ -144,7 +144,7 @@ def pagina(p):
           <h1 class="det-title">{e(p["nome"])}</h1>
           <p class="det-resumo">{e(p["resumo"])}</p>
           <div class="buy">{buy}</div>
-          <ul class="selos"><li>Nota fiscal</li><li><a href="/politicas/">Garantia de 90 dias</a></li><li>{"Sob encomenda" if esgotado(p) else "Postagem em até 2 dias úteis"}</li></ul>
+          <ul class="selos"><li>Nota fiscal</li><li><a href="/politicas/">Garantia de 90 dias</a></li><li>{"Sob encomenda" if esgotado(p) else (f"Sob encomenda · envio em até {p['prazo']} dias" if p.get("prazo") else "Postagem em até 2 dias úteis")}</li></ul>
         </div>
       </div>
       <div class="det-tec">{tec}</div>

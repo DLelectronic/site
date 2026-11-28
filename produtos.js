@@ -1,7 +1,8 @@
 /* Catálogo — edite aqui para adicionar, remover ou mudar preços.
    preco: valor no Mercado Livre · precoDireto: valor para compra direta (WhatsApp)
    aplicacao: texto de aplicação · ficha: tabela técnica [rótulo, valor] (dados do fabricante)
-   link: URL do anúncio no Mercado Livre (se vazio, vai para a loja). */
+   link: URL do anúncio no Mercado Livre (se vazio, vai para a loja).
+   prazo: dias para envio quando o item é vendido sob encomenda (ex.: 45). */
 window.DL_CONFIG = {
   whatsapp: "5514998714561",
   loja: "https://www.mercadolivre.com.br/pagina/dlelectronic",
@@ -97,7 +98,7 @@ window.DL_PRODUTOS = [
       ["Peso", "700 g"],
       ["Software", "DOPSoft (Delta)"]
     ],
-    preco: 1250, precoDireto: 1120, img: "img/dop-107bv-caixa.jpg",
+    prazo: 45, preco: 1250, precoDireto: 1120, img: "img/dop-107bv-caixa.jpg",
     link: "https://www.mercadolivre.com.br/ihm-delta-dop-107bv-7-polegadas-novo-e-lacrado-com-nf/p/MLB2104500154?pdp_filters=item_id%3AMLB4705073763" },
   { id: "dop-107dv", nome: "IHM Delta DOP-107DV com Ethernet", cat: "IHM", marca: "Delta", pagina: true,
     resumo: 'Tela touch 7" TFT 800×480 com Ethernet, 2 portas seriais e USB.',
@@ -126,7 +127,7 @@ window.DL_PRODUTOS = [
       ["Software", "DOPSoft / DIA Designer (Delta)"]
     ],
     fichaNota: "Dados conforme a documentação do fabricante. Diferença para a DOP-107BV: a DV tem Ethernet; as portas seriais não têm isolação (a DOP-107EV tem).",
-    preco: 1490, precoDireto: 1255, img: "img/dop-107bv.jpg",
+    prazo: 45, preco: 1490, precoDireto: 1255, img: "img/dop-107bv.jpg",
     imgs: ["img/dop-107bv.jpg"] },
 
   { id: "ktp700-basic", nome: "IHM Siemens KTP700 Basic", cat: "IHM", marca: "Siemens",
@@ -146,7 +147,7 @@ window.DL_PRODUTOS = [
       ["Profundidade", "39 mm"],
       ["Software", "TIA Portal: WinCC Basic / STEP 7 Basic (V13 ou superior)"]
     ],
-    preco: 3790, precoDireto: 3056, img: "img/ktp700-basic.jpg",
+    prazo: 45, preco: 3790, precoDireto: 3056, img: "img/ktp700-basic.jpg",
     link: "https://www.mercadolivre.com.br/ihm-7-siemens-ktp700-basic-simatic/up/MLBU3929099882?pdp_filters=item_id%3AMLB6831114516" },
 
   { id: "smart-700-ie-v4", nome: "IHM Siemens Smart 700 IE V4", cat: "IHM", marca: "Siemens",
@@ -173,7 +174,7 @@ window.DL_PRODUTOS = [
       ["Peso", "Aprox. 770 g"],
       ["Software", "WinCC flexible SMART V4"]
     ],
-    preco: 1750, precoDireto: 1630, img: "img/smart-700-ie-v4-caixa.jpg",
+    prazo: 45, preco: 1750, precoDireto: 1630, img: "img/smart-700-ie-v4-caixa.jpg",
     link: "https://www.mercadolivre.com.br/ihm-siemens-smart-700-ie-v4/up/MLBU3559259807?pdp_filters=item_id%3AMLB4695663787" },
 
   { id: "kinco-gl070e", nome: "IHM Kinco GL070E", cat: "IHM", marca: "Kinco",
@@ -205,7 +206,7 @@ window.DL_PRODUTOS = [
       ["Software", "Kinco DTools (V3.2 ou superior)"]
     ],
     chegando: "dezembro",
-    preco: 1190, precoDireto: 1023, img: "img/kinco-gl070e.jpg",
+    prazo: 45, preco: 1190, precoDireto: 1023, img: "img/kinco-gl070e.jpg",
     link: "https://www.mercadolivre.com.br/ihm-kinco-gl070e-7-touch-ethernet-rs485-industrial/up/MLBU4561390179?pdp_filters=item_id%3AMLB7328002370" },
 
   { id: "s7-200-smart", nome: "CLP Siemens S7-200 SMART", cat: "CLP", marca: "Siemens",
@@ -319,7 +320,7 @@ window.DL_PRODUTOS = [
       ["Sistemas", "Windows, Linux e macOS"],
       ["Certificações", "CE, FCC, RoHS, KC"]
     ],
-    preco: 1295, precoDireto: 2201, img: "img/hikrobot-mv-cs016.jpg",
+    prazo: 45, preco: 1295, precoDireto: 2201, img: "img/hikrobot-mv-cs016.jpg",
     link: "https://www.mercadolivre.com.br/camera-industrial-hikrobot-mvcs01610uc-usb-30-16mp/up/MLBU4473594818?pdp_filters=item_id%3AMLB7267176056" },
 
   { id: "topping-dx5-ii", nome: "TOPPING DX5 II", cat: "Áudio", marca: "TOPPING", pagina: true,
@@ -342,7 +343,7 @@ window.DL_PRODUTOS = [
       ["Display", '2,0" colorido, botões e knob'],
       ["Alimentação", "Fonte interna, entrada IEC"]
     ],
-    preco: 2750, precoDireto: 2557, img: "img/topping-dx5-ii.jpg",
+    prazo: 45, preco: 2750, precoDireto: 2557, img: "img/topping-dx5-ii.jpg",
     link: "https://www.mercadolivre.com.br/topping-dx5-2-dac-usb-e-amp-de-fones-lacradopronta-entrega/up/MLBU3825472001?pdp_filters=item_id%3AMLB6664772030" },
   { id: "topping-dx3-pro-plus", nome: "TOPPING DX3 Pro+", cat: "Áudio", marca: "TOPPING",
     resumo: "DAC ES9038Q2M e amplificador de fone com Bluetooth LDAC.",
@@ -366,7 +367,7 @@ window.DL_PRODUTOS = [
       ["Crosstalk", "−137 dB (DAC)"],
       ["Modos", "Amplificador de fone, fone + linha, DAC e pré-amplificador"]
     ],
-    preco: 1800, precoDireto: 1564, img: "img/topping-dx3-pro-plus.jpg",
+    prazo: 45, preco: 1800, precoDireto: 1564, img: "img/topping-dx3-pro-plus.jpg",
     link: "https://www.mercadolivre.com.br/up/MLBU5594968155?pdp_filters=item_id%3AMLB7860479566" },
   { id: "painel-siemens", nome: "Painel de Comando CLP + IHM 7\" Siemens", cat: "Painéis", marca: "Siemens",
     resumo: "Painel montado e testado: CLP S7-200 SMART 24 E / 16 S e IHM SMART 700 IE V4 na porta.",

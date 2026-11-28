@@ -216,7 +216,7 @@
     info.appendChild(buy);
     }
     var selos = el("ul", "selos");
-    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, p.chegando ? "Envio logo após a chegada do lote" : (p.esgotado && !p.soDireto ? "Sob encomenda" : "Postagem em até 2 dias úteis")));
+    selos.append(el("li", null, "Nota fiscal"), el("li", null, "Garantia de 90 dias"), el("li", null, p.chegando ? "Envio logo após a chegada do lote" : (p.esgotado && !p.soDireto ? "Sob encomenda" : (p.prazo ? "Sob encomenda · envio em até " + p.prazo + " dias" : "Postagem em até 2 dias úteis"))));
     info.appendChild(selos);
 
     if (p.software) {
